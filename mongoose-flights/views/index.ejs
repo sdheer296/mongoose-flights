@@ -1,11 +1,34 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>All Flights</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h2>All Flights</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Flight Number</th>
+          <th>Departs</th>
+          <th>Departure Airport</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% flights.forEach(function(f) { %>
+          <tr>
+            <td><%= fl.airline %></td>
+            <td><%= fl.flightNo %></td>
+            <td><%= fl.airport %></td>
+            <td><%= fl.departs %></td>
+            <td><a href="/flights/<%= f._id %>">Details</a></td>
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+    <h4><a href="/flights/new">Add new flight</a></h4>
   </body>
 </html>
