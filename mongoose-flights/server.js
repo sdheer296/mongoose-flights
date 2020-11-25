@@ -7,7 +7,6 @@ require('./config/database');
 
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
